@@ -35,4 +35,8 @@ def passdatatoviews
   @message+="<h5>Hello, World!</h5>"
   @message+="<h6>Hello, World!</h6>"
 end
+
+def showdatetimeinfo
+  @currenttime=DateTime.now
+end
 end
