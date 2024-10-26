@@ -39,4 +39,15 @@ end
 def showdatetimeinfo
   @currenttime=DateTime.now
 end
+
+def conditionalrendering
+  @data={
+    'name':'Swati',
+    'isVisible':true,
+    'loggedIn':true,
+    'countryCode':'IN',
+    'workExperience':'5 years',
+    'stateCode':nil
+  }
+end
 end
