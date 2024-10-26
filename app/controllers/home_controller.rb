@@ -50,4 +50,14 @@ def conditionalrendering
     'stateCode':nil
   }
 end
+
+def loopthrougharrays
+  @Products=[]
+  @Products.push({'id':1,'name':'Laptop','price':10000})
+  @Products.push({'id':2,'name':'Mobile','price':20000}) 
+  @Products.push({'id':3,'name':'Tablet','price':30000})
+  @Products.push({'id':4,'name':'Television','price':40000})
+  @Products.push({'id':5,'name':'Camera','price':50000})
+  @Products.push({'id':6,'name':'Watch','price':60000})
+end
 end
