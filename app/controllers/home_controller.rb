@@ -44,7 +44,7 @@ def conditionalrendering
   @data={
     'name':'Swati',
     'isVisible':true,
-    'loggedIn':true,
+    'loggedIn':false,
     'countryCode':'IN',
     'workExperience':'5 years',
     'stateCode':nil

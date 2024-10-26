@@ -17,3 +17,9 @@
     <td><%= @data[:stateCode] %></td>
   </tr>
 </table>
+
+<% if @data[:loggedIn] %>
+  <h1> Hi <%= @data[:name]%>! You are logged in!</h1>
+<% else %>
+  <h1> Hi <%= @data[:name]%>! You are not logged in!</h1>
+<% end %>
