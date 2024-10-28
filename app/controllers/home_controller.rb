@@ -67,4 +67,11 @@ def loadusers
   response.success? ? @users=response : @users=[]
 end
 
+def loadusers2
+    base_url="https://fakestoreapi.com/users"
+    response=HTTParty.get(base_url)
+    response.success? ? @users=response : @users=[]
+    @image="https://i.pravatar.cc"
+end
+
 end
