@@ -74,4 +74,21 @@ def loadusers2
     @image="https://i.pravatar.cc"
 end
 
+def show_user_details
+  redirect_to load_user_details_path(1)
+end
+def load_user_details
+  id = params[:id].to_i
+
+  if(id < 1 || id > 10)
+    redirect_to load_user_details_path(1)
+    return
+  end
+
+  response=HTTParty.get("https://fakestoreapi.com/users/#{id}")
+  if response.success?
+    @user=response
+  end
+end
+
 end
