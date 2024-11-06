@@ -25,6 +25,7 @@
             <td><%= employee.lastname %></td>  
             <td><%= employee.phone %></td>  
             <td><%= employee.email %></td>  
+            <td><a href="<%= employee_path(employee)%>">Details</a> | </td>
           </tr>
         <% end %>
     </table>
