@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   get "home/load_user_details/:id" => "home#load_user_details", as: "load_user_details"
 
   get "employees" => "employees#index", as: "employees"
-  get "employees/:id" => "employees#edit", as: "edit_employee"
+  get "employees/edit/:id" => "employees#edit", as: "edit_employee"
   get "employees/:id" => "employees#show", as: "employee"
+  patch "employees/:id" => "employees#update"
   
 end
