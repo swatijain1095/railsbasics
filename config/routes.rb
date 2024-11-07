@@ -23,10 +23,12 @@ Rails.application.routes.draw do
   get "home/load_user_details/:id" => "home#load_user_details", as: "load_user_details"
 
   get "employees" => "employees#index", as: "employees"
+  get "employees/new" => "employees#new", as: "employee_new"
   get "employees/edit/:id" => "employees#edit", as: "edit_employee"
   get "employees/:id" => "employees#show", as: "employee"
   patch "employees/:id" => "employees#update"
   get "delete_employee/:id" => "employees#delete_employee", as: "delete_employee"
   delete "employees/:id" => "employees#destroy"
+  post "employees" => "employees#create", as: "employees_create"
   
 end

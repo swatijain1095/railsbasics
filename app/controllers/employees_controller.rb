@@ -34,4 +34,18 @@ class EmployeesController < ApplicationController
     @employee.destroy!
     redirect_to employees_path
   end
+
+  def new
+    @employee=Employee.new
+  end
+
+  def create
+    @employee=Employee.new(employee_params)
+    if @employee.save
+      redirect_to employees_path, notice: "Employee is successfully created."
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
 end
