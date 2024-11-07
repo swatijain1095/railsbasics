@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_05_193853) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_06_195308) do
   create_table "employees", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_05_193853) do
     t.datetime "updated_at", null: false
     t.string "email"
     t.string "phone"
-    t.string "haspassportØboolean"
+    t.string "haspassport"
     t.integer "salary"
     t.string "notes"
     t.date "birthdate"
