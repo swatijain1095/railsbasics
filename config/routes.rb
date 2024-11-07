@@ -26,5 +26,7 @@ Rails.application.routes.draw do
   get "employees/edit/:id" => "employees#edit", as: "edit_employee"
   get "employees/:id" => "employees#show", as: "employee"
   patch "employees/:id" => "employees#update"
+  get "delete_employee/:id" => "employees#delete_employee", as: "delete_employee"
+  delete "employees/:id" => "employees#destroy"
   
 end

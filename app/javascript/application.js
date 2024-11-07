@@ -2,7 +2,6 @@
 import "@hotwired/turbo-rails";
 
 document.addEventListener("turbo:load", function () {
-  console.log("turbo:load event fired");
   hideShowAddress();
 });
 
