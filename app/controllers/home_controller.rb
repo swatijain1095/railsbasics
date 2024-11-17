@@ -79,7 +79,7 @@ def show_user_details
 end
 def load_user_details
   id = params[:id].to_i
-  
+
   if id < 1 || id > 10
     redirect_to load_user_details_path(1)
     return
