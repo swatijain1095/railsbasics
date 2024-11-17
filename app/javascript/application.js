@@ -22,3 +22,6 @@ function hideShowAddress() {
     });
   }
 }
+
+import "trix"
+import "@rails/actiontext"
