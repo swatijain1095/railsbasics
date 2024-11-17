@@ -1,5 +1,4 @@
 class EmployeesController < ApplicationController
-
   def index
     @employees=Employee.all
   end
@@ -47,5 +46,4 @@ class EmployeesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
 end

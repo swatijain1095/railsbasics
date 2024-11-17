@@ -17,11 +17,10 @@ Rails.application.routes.draw do
   get "home/showdatetimeinfo" => "home#showdatetimeinfo"
   get "home/conditionalrendering" => "home#conditionalrendering"
   get "home/loopthrougharrays" => "home#loopthrougharrays"
-  get "home/loadusers" => "home#loadusers"  
-  get "home/loadusers2" => "home#loadusers2"    
+  get "home/loadusers" => "home#loadusers"
+  get "home/loadusers2" => "home#loadusers2"
   get "home/show_user_details" => "home#show_user_details"
   get "home/load_user_details/:id" => "home#load_user_details", as: "load_user_details"
-
   get "employees" => "employees#index", as: "employees"
   get "employees/new" => "employees#new", as: "employee_new"
   get "employees/edit/:id" => "employees#edit", as: "edit_employee"
@@ -29,6 +28,5 @@ Rails.application.routes.draw do
   patch "employees/:id" => "employees#update"
   get "delete_employee/:id" => "employees#delete_employee", as: "delete_employee"
   delete "employees/:id" => "employees#destroy"
-  post "employees" => "employees#create", as: "employees_create"
-  
+  post "employees" => "employees#create", as: "employees_create"  
 end
