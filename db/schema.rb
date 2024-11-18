@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_17_164205) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_18_111921) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -74,8 +74,14 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_17_164205) do
     t.date "birthdate"
     t.date "hiredate"
     t.string "gender"
+    t.integer "country_id", null: false
+    t.integer "department_id", null: false
+    t.index ["country_id"], name: "index_employees_on_country_id"
+    t.index ["department_id"], name: "index_employees_on_department_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "employees", "countries"
+  add_foreign_key "employees", "departments"
 end
