@@ -8,5 +8,6 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
-
-@import "actiontext";
+/*
+ *= require actiontext
+ */
