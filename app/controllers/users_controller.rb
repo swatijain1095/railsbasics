@@ -8,11 +8,11 @@ class UsersController < ApplicationController
     if !@user.save
       render :new, status: :unprocessable_entity
     end
-  end
-
-  # Brakeman: ignore Mass Assignment warning for 'role' and 'notes'.
+  end  
   private
   def user_params
+  # Brakeman: ignore Mass Assignment warning for 'role' and 'notes'.
+  # Role is restricted to admin users, and Notes is validated in the model.
     params.require(:user).permit(:name, :password, :password_confirmation, :gender, :email, :birthdate, :phone, :postalcode, :websiteurl, :termsandcondition, :role, :notes)
   end
 end
