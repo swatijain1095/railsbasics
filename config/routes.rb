@@ -30,5 +30,4 @@ Rails.application.routes.draw do
   delete "employees/:id" => "employees#destroy"
   post "employees" => "employees#create", as: "employees_create"
   resources :users
-
 end

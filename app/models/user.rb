@@ -13,5 +13,5 @@ class User < ApplicationRecord
   validates :postalcode, presence: true, length: { minimum: 4, maximum: 7 }
   validates :websiteurl, presence: true, format: { with: /\Ahttps?:\/\/[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)+(:[0-9]+)?(\/.*)?\z/, message: "must be a valid URL" }
   validates :termsandcondition, acceptance: { message: "must be accepted" }
-  validates :role, presence: true, inclusion: { in: ROLES, message: 'is not a valid role' }
+  validates :role, presence: true, inclusion: { in: ROLES, message: "is not a valid role" }
 end
