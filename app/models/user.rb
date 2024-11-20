@@ -14,4 +14,5 @@ class User < ApplicationRecord
   validates :websiteurl, presence: true, format: { with: /\Ahttps?:\/\/[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)+(:[0-9]+)?(\/.*)?\z/, message: "must be a valid URL" }
   validates :termsandcondition, acceptance: { message: "must be accepted" }
   validates :role, presence: true, inclusion: { in: ROLES, message: "is not a valid role" }
+  validates :notes, length: { maximum: 500 }, allow_blank: true
 end
