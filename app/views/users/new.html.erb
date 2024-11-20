@@ -2,6 +2,21 @@
 
 <%= form_for @user, html: {class: "form-horizontal"} do |f| %>
 
+  <div id="error_explanation">
+    <% if @user.errors.present? %>
+      <h3 class="error">
+        <%= "#{pluralize(@user.errors.count, "error")}
+        prohibited this user from being saved:" %>
+      </h3>
+    <%end%>
+
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>  
+        <li><%= msg %></li> 
+      <%end%>
+    </ul>
+  </div>
+
   <fieldset>
     <div class="form-group row mb-3">
       <label class="col-sm-2 control-label">Name:
