@@ -12,6 +12,12 @@ class UsersController < ApplicationController
   def user_params
     # Brakeman: ignore Mass Assignment warning for 'role' and 'notes'.
     # Role is restricted to admin users, and Notes is validated in the model.
-    params.require(:user).permit(:name, :password, :password_confirmation, :gender, :email, :birthdate, :phone, :postalcode, :websiteurl, :termsandcondition, :role, :notes)
+    permitted_attributes = [
+      :name, :password, :password_confirmation, :gender,
+      :email, :birthdate, :phone, :postalcode, :websiteurl,
+      :termsandcondition, :notes
+    ]
+    permitted_attributes << :role if current_user&.admin?
+    params.require(:user).permit(*permitted_attributes)
   end
 end
