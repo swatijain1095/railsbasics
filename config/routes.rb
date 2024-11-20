@@ -29,4 +29,6 @@ Rails.application.routes.draw do
   get "delete_employee/:id" => "employees#delete_employee", as: "delete_employee"
   delete "employees/:id" => "employees#destroy"
   post "employees" => "employees#create", as: "employees_create"
+  
+  resources:users
 end
