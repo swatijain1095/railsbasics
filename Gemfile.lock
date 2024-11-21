@@ -54,6 +54,9 @@ GEM
       activemodel (= 7.2.2)
       activesupport (= 7.2.2)
       timeout (>= 0.4.0)
+    activerecord-sqlserver-adapter (7.2.2)
+      activerecord (~> 7.2.0)
+      tiny_tds
     activestorage (7.2.2)
       actionpack (= 7.2.2)
       activejob (= 7.2.2)
@@ -348,6 +351,7 @@ GEM
     thruster (0.1.8-x86_64-darwin)
     thruster (0.1.8-x86_64-linux)
     timeout (0.4.1)
+    tiny_tds (2.1.7)
     turbo-rails (2.0.11)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
@@ -387,6 +391,7 @@ PLATFORMS
 
 DEPENDENCIES
   actiontext
+  activerecord-sqlserver-adapter
   bcrypt (~> 3.1.7)
   bootsnap
   brakeman
@@ -409,6 +414,7 @@ DEPENDENCIES
   sqlite3 (>= 2.1)
   stimulus-rails
   thruster
+  tiny_tds
   turbo-rails
   tzinfo-data
   web-console
