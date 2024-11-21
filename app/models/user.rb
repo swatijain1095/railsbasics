@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { minimum: 5, maximum: 15 }
   validates :password, presence: true, confirmation: true, length: { minimum: 5, maximum: 15 }, unless: -> { password.blank? }
-  validates :password_confirmation, presence: true, length: { minimum: 5, maximum: 15 }, unless: -> { password.blank? }
+  validates :password_confirmation, presence: true, length: { minimum: 5, maximum: 15 }
   validates :gender, presence: true
   validates :birthdate, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }

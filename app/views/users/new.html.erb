@@ -24,6 +24,7 @@
       </label>
       <div class="col-sm-10">
         <%= f.text_field :name, placeholder: "Enter Name", class: "form-control" %>
+        <%= display_error(@user.errors, :name) %>
       </div>
     </div>
   </fieldset> 
@@ -35,6 +36,7 @@
     </label>
     <div class="col-sm-10">
       <%= f.password_field :password, placeholder: "Enter Password", class: "form-control" %>
+      <%= display_error(@user.errors, :password) %>
     </div>
   </div>
 </fieldset> 
@@ -46,6 +48,7 @@
   </label>
   <div class="col-sm-10">
     <%= f.password_field :password_confirmation, placeholder: "Enter Confirm Password", class: "form-control" %>
+    <%= display_error(@user.errors, :password_confirmation) %>
   </div>
 </div>
 </fieldset>
@@ -79,6 +82,7 @@
   </label>
   <div class="col-sm-10">
     <%= f.date_field :birthdate, class: "form-control" %>
+    <%= display_error(@user.errors, :birthdate) %>
   </div>
 </div>
 </fieldset>
@@ -90,6 +94,7 @@
   </label>
   <div class="col-sm-10">
     <%= f.email_field :email, autofocus: true, placeholder: "Enter Email", class: "form-control" %>
+    <%= display_error(@user.errors, :email) %>
   </div>
 </div>
 </fieldset> 
@@ -101,6 +106,7 @@
   </label>
   <div class="col-sm-10">
     <%= f.text_field :phone, placeholder: "Enter Phone Number", class: "form-control" %>
+    <%= display_error(@user.errors, :phone) %>
   </div>
 </div>
 </fieldset> 
@@ -112,6 +118,7 @@
   </label>
   <div class="col-sm-10">
     <%= f.text_field :postalcode, placeholder: "Enter Postal Code", class: "form-control" %>
+    <%= display_error(@user.errors, :postalcode) %>
   </div>
 </div>
 </fieldset> 
@@ -123,6 +130,7 @@
   </label>
   <div class="col-sm-10">
     <%= f.text_area :notes, placeholder: "Enter Notes", class: "form-control" %>
+    <%= display_error(@user.errors, :notes) %>
   </div>
 </div>
 </fieldset> 
@@ -134,6 +142,7 @@
   </label>
   <div class="col-sm-10">
     <%= f.text_field :websiteurl, placeholder: "Enter Website URL", class: "form-control" %>
+    <%= display_error(@user.errors, :websiteurl) %>
   </div>
 </div>
 </fieldset> 
@@ -145,6 +154,7 @@
   </label>
   <div class="col-sm-10">
     <%= f.check_box :termsandcondition, { class: "form-check-input" } %>
+    <%= display_error(@user.errors, :termsandcondition) %>
   </div>
 </div>
 </fieldset>
@@ -156,6 +166,7 @@
   </label>
   <div class="col-sm-10">
     <%= f.text_field :role, placeholder: "Enter Role(e.g. admin, moderator, regulator )", class: "form-control" %>
+    <%= display_error(@user.errors, :role) %>
   </div>
 </div>
 </fieldset>
