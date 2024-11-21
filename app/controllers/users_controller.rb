@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
   def create
     @user = User.new(user_params)
-     # Only allow role assignment for admin users
+    # Only allow role assignment for admin users
     if current_user&.admin? && params[:user][:role].present?
       @user.role = params[:user][:role]
     end
