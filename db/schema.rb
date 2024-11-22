@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_19_144239) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_22_163150) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -74,24 +74,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_19_144239) do
     t.date "birthdate"
     t.date "hiredate"
     t.string "gender"
-    t.integer "country_id", null: false
-    t.integer "department_id", null: false
+    t.bigint "country_id"
+    t.bigint "department_id"
     t.index ["country_id"], name: "index_employees_on_country_id"
     t.index ["department_id"], name: "index_employees_on_department_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "password_digest"
-    t.string "gender"
-    t.date "birthdate"
-    t.string "email"
-    t.string "phone"
-    t.integer "postalcode"
-    t.string "websiteurl"
-    t.boolean "termsandcondition"
-    t.string "role"
-    t.string "notes"
+  create_table "newusers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
