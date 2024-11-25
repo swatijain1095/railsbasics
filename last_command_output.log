@@ -1,0 +1,8 @@
+      create  app/controllers/bulkdeleteemployees_controller.rb
+      invoke  erb
+      create    app/views/bulkdeleteemployees
+      invoke  test_unit
+      create    test/controllers/bulkdeleteemployees_controller_test.rb
+      invoke  helper
+      create    app/helpers/bulkdeleteemployees_helper.rb
+      invoke    test_unit
