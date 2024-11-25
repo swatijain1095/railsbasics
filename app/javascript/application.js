@@ -25,3 +25,5 @@ function hideShowAddress() {
 
 import "trix"
 import "@rails/actiontext"
+import "controllers"
+import "@hotwired/turbo-rails"
