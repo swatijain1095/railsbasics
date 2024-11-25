@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   delete "employees/:id" => "employees#destroy"
   post "employees" => "employees#create", as: "employees_create"
   resources :users
-  resources :singleemployeedelete, only: [:index] do
-    delete 'emp_delete', on: :collection
+  resources :singleemployeedelete, only: [ :index ] do
+    delete "emp_delete", on: :collection
   end
 end
