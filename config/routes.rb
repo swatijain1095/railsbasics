@@ -33,4 +33,7 @@ Rails.application.routes.draw do
   resources :singleemployeedelete, only: [ :index ] do
     delete "emp_delete", on: :collection
   end
+  resources :bulkdeleteemployees, only: [ :index ] do
+    delete "bulk_delete", on: :collection
+  end
 end
