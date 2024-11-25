@@ -1,4 +1,5 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
+import "controllers";
 import "@hotwired/turbo-rails";
 
 document.addEventListener("turbo:load", function () {
@@ -23,5 +24,5 @@ function hideShowAddress() {
   }
 }
 
-import "trix"
-import "@rails/actiontext"
+import "trix";
+import "@rails/actiontext";
