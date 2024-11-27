@@ -16,7 +16,6 @@ class BulkupdatesController < ApplicationController
   private
   def find_employee(id)
     @employee=Employee.find(id)
-    return (@employee)
   end
 
   def employee_params(attributes)

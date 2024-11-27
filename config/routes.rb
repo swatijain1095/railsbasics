@@ -39,5 +39,5 @@ Rails.application.routes.draw do
   resources :bulkupdates, only: [ :index ] do
     patch "bulk_update", on: :collection
   end
-  resources :bulkinserts, only: [:new, :create]
+  resources :bulkinserts, only: [ :new, :create ]
 end
