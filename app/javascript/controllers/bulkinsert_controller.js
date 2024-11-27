@@ -1,7 +1,10 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="bulkinsert"
 export default class extends Controller {
-  connect() {
+  connect() {}
+
+  removeEmployee(event) {
+    event.target.closest("div").remove();
   }
 }
