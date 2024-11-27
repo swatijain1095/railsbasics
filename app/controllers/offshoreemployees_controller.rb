@@ -1,0 +1,2 @@
+class OffshoreemployeesController < ApplicationController
+end
