@@ -3,7 +3,7 @@
   <br/>
 
   <% if @employees.present? %>
-
+  <%= form_with(url:bulk_update_bulkupdates_path, method: :patch) do |f| %>
       <table class="table">
         <thead>
           <tr>
@@ -28,5 +28,7 @@
           <% end %>
         </tbody>
       </table>
+      <%= f.submit "Update All Employees", class: "btn btn-primary" %>
+      <%end %>
   <% end %>
 </div>
