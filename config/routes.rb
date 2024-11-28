@@ -44,5 +44,4 @@ Rails.application.routes.draw do
 
   get "/locations/states" => "locations#states"
   get "/locations/cities" => "locations#cities"
-
 end
