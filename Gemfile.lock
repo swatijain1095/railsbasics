@@ -253,6 +253,8 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails-ujs (0.1.0)
+      railties (>= 3.1)
     railties (7.2.2)
       actionpack (= 7.2.2)
       activesupport (= 7.2.2)
@@ -348,6 +350,8 @@ GEM
     thruster (0.1.8-x86_64-darwin)
     thruster (0.1.8-x86_64-linux)
     timeout (0.4.1)
+    toastr-rails (1.0.3)
+      railties (>= 3.1.0)
     turbo-rails (2.0.11)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
@@ -401,6 +405,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 7.2.1)
+  rails-ujs
   rubocop-rails-omakase
   selenium-webdriver
   solid_cable
@@ -409,6 +414,7 @@ DEPENDENCIES
   sqlite3 (>= 2.1)
   stimulus-rails
   thruster
+  toastr-rails
   turbo-rails
   tzinfo-data
   web-console
