@@ -11,7 +11,7 @@ export default class extends Controller {
     if (countryId) {
       Rails.ajax({
         type: "GET",
-        url: `/locations/states?country_id=${country_id}`,
+        url: `/locations/states?country_id=${countryid}`,
         success: (data) => {
           if (data.length > 0) {
             this.updateOptions(this.stateSelectTarget, data, "");
