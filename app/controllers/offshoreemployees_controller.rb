@@ -11,6 +11,6 @@ class OffshoreemployeesController < ApplicationController
     end
   end
   def offshoreemployee_params
-    params.require(:offshoreemployee).permit(:firstname, :lastname, :country_id, :state_id, :city_id)
+    params.require(:offshoreemployee).permit(:first_name, :last_name, :country_id, :state_id, :city_id)
   end
 end

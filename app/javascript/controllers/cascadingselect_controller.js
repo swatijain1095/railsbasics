@@ -7,17 +7,19 @@ export default class extends Controller {
   static targets = ["countrySelect", "stateSelect", "citySelect"];
 
   loadStates() {
+    console.log("loadStates");
     const countryId = this.countrySelectTarget.value;
     if (countryId) {
       Rails.ajax({
         type: "GET",
-        url: `/locations/states?country_id=${countryid}`,
+        url: `/locations/states?country_id=${countryId}`,
         success: (data) => {
           if (data.length > 0) {
             this.updateOptions(this.stateSelectTarget, data, "");
+            this.loadCities();
           } else {
             this.updateOptions(this.stateSelectTarget, data, "Select State");
-            this.updateOptions(this.citySelectTarget, [], "Select City");
+            this.updateOptions(this.citySelectTarget, data, "Select City");
           }
         },
       });
@@ -42,5 +44,22 @@ export default class extends Controller {
     }
   }
 
-  loadCities() {}
+  loadCities() {
+    const stateId = this.stateSelectTarget.value;
+    if (stateId) {
+      Rails.ajax({
+        type: "GET",
+        url: `/locations/cities?state_id=${stateId}`,
+        success: (data) => {
+          if (data.length > 0) {
+            this.updateOptions(this.citySelectTarget, data, "");
+          } else {
+            this.updateOptions(this.citySelectTarget, data, "Select City");
+          }
+        },
+      });
+    } else {
+      this.stateSelectTarget.innerHTML = "Select State";
+    }
+  }
 }
