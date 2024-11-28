@@ -40,4 +40,8 @@ Rails.application.routes.draw do
     patch "bulk_update", on: :collection
   end
   resources :bulkinserts, only: [ :new, :create ]
+  resourses :offshoreemployee, only: [ :new, :create ]
+
+  get "/locations/states" => "locations#states"
+  get "/locations/cities" => "locations#cities"
 end
