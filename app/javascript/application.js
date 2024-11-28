@@ -8,6 +8,7 @@ import "@hotwired/turbo-rails";
 
 document.addEventListener("turbo:load", function () {
   hideShowAddress();
+  changeCategory();
 });
 
 function hideShowAddress() {
@@ -26,6 +27,20 @@ function hideShowAddress() {
       }
     });
   }
+}
+
+function changeCategory() {
+  $(".category-dropdown").on("change", function (e) {
+    const categoryName = $(this).val();
+    $.ajax({
+      url: "/shoppingcart/product_list",
+      method: "GET",
+      data: {
+        category: categoryName,
+      },
+    });
+    e.stopImmediatePropagation();
+  });
 }
 
 import "trix";
