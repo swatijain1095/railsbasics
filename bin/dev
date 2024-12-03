@@ -1,2 +1,4 @@
 #!/usr/bin/env ruby
 exec "./bin/rails", "server", *ARGV
+rm -f tmp/pids/server.pid
+rm -rf public/assets

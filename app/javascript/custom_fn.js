@@ -26,6 +26,18 @@ function minusQtyBtn() {
   });
 }
 
+function qtyTextbox() {
+  $(".qty").on("keyup", function (e) {
+    var qtyElement = $(this).closest("tr").find(".qty");
+    var qty = parseInt(qtyElement.val());
+    if (!qty || qty < 1) {
+      toastr.error("Qty can't be empty or less than 0");
+      qtyElement.val(1);
+    }
+    updatePrice(this);
+    e.stopImmediatePropagation();
+  });
+}
 function updatePrice(element) {
   var closestTr = $(element).closest("tr");
   var price = parseFloat(closestTr.find(".product-price").val());
