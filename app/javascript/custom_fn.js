@@ -20,4 +20,13 @@ function updatePrice(element) {
     .closest("tr")
     .find("td:eq(2)")
     .text((price * qty).toFixed(2));
+  updateTotalPrice();
+}
+
+function updateTotalPrice() {
+  var totalPrice = 0.0;
+  $("table tbody tr").each(function () {
+    totalPrice += parseFloat($(this).find("td:eq(2)").text().trim());
+  });
+  $(".total-count").text(totalPrice.toFixed(2));
 }
