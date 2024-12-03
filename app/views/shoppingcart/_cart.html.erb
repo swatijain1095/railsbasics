@@ -24,6 +24,11 @@
       </button>
     </div>
   </td>
+  <td>
+    <%= link_to remove_cart_path(product['id']), class: "btn btn-danger", remote: true do %>
+      <span class="bi bi-trash-fill"></span>
+    <% end %>
+  </td>
 
   </tr>
 <% end %>
