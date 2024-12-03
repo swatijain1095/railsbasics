@@ -12,6 +12,20 @@ function addQtyBtn() {
   });
 }
 
+function minusQtyBtn() {
+  $(".btn-minus").on("click", function (e) {
+    var qtyElement = $(this).closest("tr").find(".qty");
+    var qty = parseInt(qtyElement.val());
+    if (qty == 1) {
+      toastr.error("Qty can't be 0");
+    } else {
+      qtyElement.val(qty - 1);
+    }
+    updatePrice(this);
+    e.stopImmediatePropagation();
+  });
+}
+
 function updatePrice(element) {
   var closestTr = $(element).closest("tr");
   var price = parseFloat(closestTr.find(".product-price").val());
