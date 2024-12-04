@@ -28,4 +28,6 @@ export default class extends Controller {
     const netSalary = salary + allowanceAmount;
     this.netSalaryTarget.value = netSalary.toFixed(2);
   }
+
+  calculate_check_box() {}
 }

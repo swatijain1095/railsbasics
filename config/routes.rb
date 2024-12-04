@@ -53,4 +53,6 @@ Rails.application.routes.draw do
   resources :employeespaginations, only: [ :index ]
   get "radio_index" => "allowances#radio_index"
   post "radio_create" => "allowances#radio_create"
+  get "check_box_index" => "allowances#check_box_index"
+  post "check_box_create" => "allowances#check_box_create"
 end

@@ -14,6 +14,15 @@ class AllowancesController < ApplicationController
     end
   end
 
+  def check_box_index
+    @allowance_types = Allowancetype.all
+    @employee_salary = Employeesalary.new
+  end
+
+  def check_box_create
+      fail
+  end
+
   private
 
   def employee_salary_params
