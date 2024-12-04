@@ -1,6 +1,6 @@
 class EmployeespaginationsController < ApplicationController
   def index
-    #Pagination
+    # Pagination
     # @employees = Employee.all
     # @employees = Employee.page(params[:page])
     # @employees = Employee.page(params[:page]).per(2)
