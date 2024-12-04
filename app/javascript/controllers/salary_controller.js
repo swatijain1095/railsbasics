@@ -29,5 +29,19 @@ export default class extends Controller {
     this.netSalaryTarget.value = netSalary.toFixed(2);
   }
 
-  calculate_check_box() {}
+  calculate_check_box() {
+    const salary = parseFloat(this.salaryInputTarget.value);
+    const checkedCheckboxes = document.querySelectorAll(
+      'input[name="allowancetype_ids[]"]:checked'
+    );
+    let allowanceAmount = 0;
+
+    checkedCheckboxes.forEach((checkbox) => {
+      const percentage = parseFloat(checkbox.dataset.percentage);
+      allowanceAmount += (salary * percentage) / 100;
+    });
+    const netSalary = salary + allowanceAmount;
+    this.allowanceSalaryTarget.value = allowanceAmount.toFixed(2);
+    this.netSalaryTarget.value = netSalary.toFixed(2);
+  }
 }
