@@ -1,0 +1,2 @@
+class Allowancetype < ApplicationRecord
+end

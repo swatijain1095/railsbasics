@@ -1,0 +1,2 @@
+class Employeesalary < ApplicationRecord
+end
