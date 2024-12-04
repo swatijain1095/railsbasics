@@ -8,27 +8,27 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-# unless Department.blank?
-#   Department.create!(name: "Networking")
-#   Department.create!(name: "Dispatch")
-#   Department.create!(name: "Marketing")
-#   Department.create!(name: "Shipping")
-# end
+unless Department.blank?
+  Department.create!(name: "Networking")
+  Department.create!(name: "Dispatch")
+  Department.create!(name: "Marketing")
+  Department.create!(name: "Shipping")
+end
 
 
-# unless State.blank?
-#   State.create!(name: "Madhya Pradesh", country_id: 2)
-#   State.create!(name: "Rajasthan", country_id: 2)
-#   State.create!(name: "Gujarat", country_id: 2)
-#   State.create!(name: "Maharashtra", country_id: 2)
-# end
+unless State.blank?
+  State.create!(name: "Madhya Pradesh", country_id: 2)
+  State.create!(name: "Rajasthan", country_id: 2)
+  State.create!(name: "Gujarat", country_id: 2)
+  State.create!(name: "Maharashtra", country_id: 2)
+end
 
-# unless State.blank?
-#   State.create!(name: "California", country_id: 3)
-#   State.create!(name: "New York", country_id: 3)
-#   State.create!(name: "Texas", country_id: 3)
-#   State.create!(name: "Florida", country_id: 3)
-# end
+unless State.blank?
+  State.create!(name: "California", country_id: 3)
+  State.create!(name: "New York", country_id: 3)
+  State.create!(name: "Texas", country_id: 3)
+  State.create!(name: "Florida", country_id: 3)
+end
 
 unless City.blank?
   City.create!(name: "Indore", state_id: 9)
@@ -84,4 +84,14 @@ unless City.blank?
   City.create!(name: "Orlando", state_id: 16)
   City.create!(name: "Tampa", state_id: 16)
   City.create!(name: "Jacksonville", state_id: 16)
+end
+
+unless Allowancetype.blank?
+  Allowancetype.create!(name: "HRA", percentage: 10)
+  Allowancetype.create!(name: "CA", percentage: 15)
+  Allowancetype.create!(name: "MA", percentage: 20)
+  Allowancetype.create!(name: "PA", percentage: 25)
+  Allowancetype.create!(name: "DA", percentage: 30)
+  Allowancetype.create!(name: "EPF", percentage: 35)
+  Allowancetype.create!(name: "FA", percentage: 40)
 end
