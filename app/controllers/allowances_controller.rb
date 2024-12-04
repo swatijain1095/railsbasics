@@ -29,6 +29,14 @@ class AllowancesController < ApplicationController
     end
   end
 
+  def list_box_index
+    @allowance_types = Allowancetype.all
+    @employee_salary = Employeesalary.new
+  end
+
+  def list_box_create
+  end
+
   private
 
   def employee_salary_params
