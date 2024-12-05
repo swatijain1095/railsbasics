@@ -70,4 +70,28 @@ export default class extends Controller {
       multipleRightArrow.disabled = true;
     }
   }
+
+  moveOptionsRight(event) {
+    const leftSelect = this.leftSelectTarget;
+    const rightSelect = this.rightSelectTarget;
+
+    const selectedOptions = Array.from(leftSelect.selectedOptions);
+    selectedOptions.forEach((option) => {
+      rightSelect.appendChild(option);
+    });
+  }
+
+  moveOptionsLeft(event) {
+    const leftSelect = this.leftSelectTarget;
+    const rightSelect = this.rightSelectTarget;
+
+    const selectedOptions = Array.from(rightSelect.selectedOptions);
+    selectedOptions.forEach((option) => {
+      leftSelect.appendChild(option);
+    });
+  }
+
+  stopSubmit(event) {
+    event.preventDefault();
+  }
 }
