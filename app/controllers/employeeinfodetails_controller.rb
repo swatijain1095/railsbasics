@@ -31,7 +31,28 @@ class EmployeeinfodetailsController < ApplicationController
   end
 
   def show
+    @employee = Employeeinfo.find_by id: params[:id]
+
+		if @employee.present?
+			@folder_name = "#{@employee.id}_#{@employee.lastname}"
+			folder_path = Rails.public_path.join('employee_files', @folder_name)
+			file_list = Dir["#{folder_path.to_s}/*"]
+
+			cv_file_name = file_list.find { |file| file.include?('cv') }.split("/").last
+			my_pic_file_name = file_list.find { |file| file.include?('my_pic') }.split("/").last
+			@cv_file_path = "employee_files/#{@folder_name}/#{cv_file_name}"
+			@my_pic_file_path = "employee_files/#{@folder_name}/#{my_pic_file_name}"
+
+			certi_folder_path = Rails.public_path.join('employee_files', @folder_name, 'certificates')
+			certi_files = Dir["#{certi_folder_path.to_s}/*"]
+			@certificates = certi_files.map { |certi| certi[certi.index("employee_files")..(certi.length)] }
+
+		end
   end
+
+  def download_file
+		send_file("#{Rails.root}/public/#{params[:download_path]}")
+	end
 
   private
 

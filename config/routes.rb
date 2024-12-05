@@ -64,4 +64,6 @@ Rails.application.routes.draw do
   
   resources :employeeinfodetails, only: [ :index, :show, :create, :new ]
   root "employeeinfodetails#index"
+
+  get "employees/download_file" => "employeeinfodetails#download_file"
 end
