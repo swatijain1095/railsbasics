@@ -57,4 +57,8 @@ Rails.application.routes.draw do
   post "check_box_create" => "allowances#check_box_create"
   get "list_box_index" => "allowances#list_box_index"
   post "list_box_create" => "allowances#list_box_create"
+
+  resources :fileexportemployees, only: [ :index ]
+  root "fileexportemployees#index"
+  get "fileexportemployees/export_as" => "fileexportemployees#export_as", as: :export_as
 end
