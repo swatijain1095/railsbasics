@@ -60,6 +60,22 @@ end
 
 gem "kaminari"
 
+gem "tiny_tds"
+gem "activerecord-sqlserver-adapter"
+
+# For PDF
+gem "prawn"
+gem "prawn-table"
+
+# For CSV
+gem "csv"
+
+# For XLS
+gem "spreadsheet"
+
+# For Docx
+gem "caracal"
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
