@@ -31,18 +31,34 @@ class FileexportemployeesController < ApplicationController
   end
 
   def export_as_csv
-    Fail
+    respond_to do |format|
+      format.html
+      format.csv do
+        filename = ['employees', Date.today].join(' ')
+        send_data Fileexportemployee.to_csv(@employees), filename:, content_type: 'text/csv'
+      end
+    end
   end
 
   def export_as_txt
-    Fail
+    txt_path = EmployeeTxtService.new(@employees).employee_data
+    send_file("#{Rails.root}/public/#{txt_path}", filename: 'employees.txt')
+
   end
 
   def export_as_xls
-    Fail
+    empbook = EmployeeXlsService.new(@employees).employee_data
+  respond_to do |format|
+    format.xls {
+        tempfile = Tempfile.new(['employees', '.xls'])
+        empbook.write(tempfile.path)
+        send_file tempfile.path, filename: 'employees.xls', type: 'application/vnd.ms-excel'
+     }
+  end
   end
 
   def export_as_docx
-    Fail
+    filename = EmployeeDocxService.new(@employees).employee_data
+    send_file("#{Rails.root}/public/#{filename}", filename: 'employees.docx', disposition: 'attachment')
   end
 end
