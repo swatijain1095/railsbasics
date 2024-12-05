@@ -35,6 +35,13 @@ class AllowancesController < ApplicationController
   end
 
   def list_box_create
+    @employee_salary = Employeesalary.new(employee_salary_params)
+    if @employee_salary.save
+      @employee_salary.allowancetypes << Allowancetype.where(id: params[:allowancetype_ids])
+      redirect_to list_box_index_path, notice: "Employee salary is successfully created."
+    else
+      render :list_box_index
+    end
   end
 
   private
