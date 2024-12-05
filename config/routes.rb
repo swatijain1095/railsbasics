@@ -62,6 +62,6 @@ Rails.application.routes.draw do
   # root "fileexportemployees#index"
   get "fileexportemployees/export_as" => "fileexportemployees#export_as", as: :export_as
   
-  resources :emploueeinfodetails, only: [ :index, :show, :create, :new ]
-  root "emploueeinfodetails#index"
+  resources :employeeinfodetails, only: [ :index, :show, :create, :new ]
+  root "employeeinfodetails#index"
 end
