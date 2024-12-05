@@ -1,0 +1,2 @@
+class Fileexportemployee < ApplicationRecord
+end
