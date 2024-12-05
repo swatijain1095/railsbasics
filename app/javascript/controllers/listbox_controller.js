@@ -2,7 +2,12 @@ import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="listbox"
 export default class extends Controller {
-  connect() {}
+  connect() {
+    this.leftArrowTarget.disabled = true;
+    this.multipleLeftArrowTarget.disabled = true;
+    this.rightArrowTarget.disabled = true;
+    this.multipleRightArrowTarget.disabled = true;
+  }
 
   static targets = [
     "leftSelect",
