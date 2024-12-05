@@ -22,7 +22,12 @@ class FileexportemployeesController < ApplicationController
 
   private
   def export_as_pdf
-    Fail
+    respond_to do |format|
+      format.pdf do
+      employees_pdf = EmployeePdfService.new(@employees)
+      send_data employees_pdf.render, filename: "employees.pdf", type: "application/pdf", disposition: "attachment"
+      end
+    end
   end
 
   def export_as_csv
