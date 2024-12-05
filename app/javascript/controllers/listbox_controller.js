@@ -94,4 +94,19 @@ export default class extends Controller {
   stopSubmit(event) {
     event.preventDefault();
   }
+
+  calculateSalary(event) {
+    const salary = parseFloat(this.salaryInputTarget.value);
+    const rightSelect = this.rightSelectTarget;
+    const allowanceSalary = this.allowanceSalaryTarget;
+    let allowanceAmount = 0;
+
+    Array.from(rightSelect.options).forEach((option) => {
+      const percentage = parseFloat(option.dataset.percentage);
+      allowanceAmount += (salary * percentage) / 100;
+    });
+    allowanceSalary.value = allowanceAmount;
+    const netSalary = salary + allowanceAmount;
+    this.netSalaryTarget.value = netSalary.toFixed(2);
+  }
 }
