@@ -4,6 +4,7 @@ class EmployeeinfodetailsController < ApplicationController
   end
 
   def new
+    @employee = Employeeinfo.new
   end
 
   def create
